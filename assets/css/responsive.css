@@ -1,0 +1,57 @@
+/* PC */
+@media (min-width: 1024px) {
+    .header .nav-center .m-logo-lol {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+    .header .nav-center li {
+        display: none;
+    }
+
+    .header .nav-center .m-logo-lol {
+        display: block;
+    }
+
+    .header .nav-center .logo-lol {
+        display: none;
+    }
+
+    .header .nav-right {
+        padding-right: 10px;
+    }
+
+    .header .nav-right .search-btn,
+    .header .nav-right .playNow-btn {
+        display: none;
+    }
+
+    .header .nav-right .world-btn {
+        font-size: 24px;
+        padding: 0;
+    }
+
+    .header .menu {
+        margin-right: 16px;
+    }
+
+    .content .item-3 {
+        display: none;
+    }
+}
+
+/* Mobile */
+/* @media (min-width: 600px) and (max-width: 767px) {
+    .content .item-3 {
+        display: none;
+    }
+} */
+
+/* Other */
+@media (max-width: 599px) {
+    .content .item-2 {
+        display: none;
+    }
+}
