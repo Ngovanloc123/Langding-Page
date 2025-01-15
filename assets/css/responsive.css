@@ -3,6 +3,10 @@
     .header .nav-center .m-logo-lol {
         display: none;
     }
+
+    .content .navbar {
+        display: none;
+    }
 }
 
 /* Tablet */
