@@ -7,6 +7,10 @@
     .content .navbar {
         display: none;
     }
+
+    .nav__menu {
+        display: none;
+    }
 }
 
 /* Tablet */
@@ -37,25 +41,209 @@
         padding: 0;
     }
 
-    .header .menu {
+    .header .nav__burger {
+        display: flex;
         margin-right: 16px;
     }
 
     .content .item-3 {
         display: none;
     }
+
+    .content .champion .container {
+        width: 100%;
+    }
+
+    .content .champion .img-champion {
+        width: 100%;
+    }
+
+    .content .background3 .container {
+        flex-direction: column-reverse;
+        align-items: start;
+    }
+
+    .content .container .img {
+        width: 100%;
+        align-self: center;
+    }
+
+    .content .background3 .container .content-container {
+        text-align: start;
+    }
+
+    .content .multipleWaysToPlay .container  {
+        flex-direction: column;
+    }
+
+    /* MENU */
+    
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        /* Ẩn menu, mặc định ẩn */
+        right: -400px;
+
+        width: 400px;
+        height: 100%;
+        background: #111111;
+        color: white;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease;
+        z-index: 3;
+
+        overflow-y: auto; 
+        overscroll-behavior: contain;
+        scrollbar-color: #888 #222; 
+    }
+
+    /* Xử lý sự kiện nhấn vào nút xóa ở header */
+    .nav__menu.show {
+        right: 0;
+    }
+
+    .nav__menu.close {
+        right: 400px;
+    }
+
+    .header__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        
+    }
+
+    .header__menu .m-logo-lol {
+        cursor: default;
+    }
+
+    .search__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #2b2a28;
+        border-radius: 12px;
+        margin-right: 8px;
+        margin-left: 12px;
+    }
+
+    .search__menu .search__input {
+        flex: 1;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        /* padding: 8px; */
+        outline: none;
+        margin-left: 10px;
+    }
+
+    .search__menu .close__btn {
+        font-size: 12px;
+        margin-right: 4px;
+        color: rgb(150, 150, 150);
+    }
+
+    .nav__list {
+        list-style: none;
+        padding: 10px;
+        margin-top: 20px;
+        
+    }
+
+    .nav__list li {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 16px 18px;
+        margin-bottom: 4px;
+        cursor: pointer;
+    }
+
+    .nav__list > li:hover{
+        background-color: #333;
+        border-radius: 8px;
+    }
+
+    .nav__list .dropdown__item {
+        position: relative;
+    }
+
+    .nav__list .dropdown__item .dropdown__arrow,
+    .nav__list .angle-down__menu {
+        font-size: 12px;
+        position: absolute;
+        right: 4%;
+        color: #706e6e;
+    }
+
+    .nav__list .angle-down__menu {
+        right: 11%;
+    }
+
+    .nav__list a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .nav__list > li:hover a,
+    .nav__list > li:hover {
+        color: #c8aa6e;
+    }
+
+    .nav__close {
+        display: inline-block;
+    }
+
+    .nav__menu .playnow-btn__menu {
+        text-align: center;
+        background-color: #37d9f1;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .nav__menu .playnow-btn__menu:hover {
+        background-color: #08c4e1;
+    }
+
+    .subnav__menu {
+        display: none;
+        list-style: none;
+
+    }
+
+    .subnav__menu li {
+        color: #fff;
+    }
+
+    .subnav__menu li:hover {
+        background-color: #333;
+        border-radius: 8px;
+    }
+
+    #subnav-New.show,
+    #subnav-Discover.show {
+        display: block;
+    }
+
+
 }
 
 /* Mobile */
-/* @media (min-width: 600px) and (max-width: 767px) {
-    .content .item-3 {
-        display: none;
-    }
-} */
-
-/* Other */
 @media (max-width: 599px) {
     .content .item-2 {
         display: none;
+    }
+
+    .nav__menu.show {
+        width: 100%;
     }
 }

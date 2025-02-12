@@ -11,6 +11,24 @@ html {
 #main {
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Làm mờ */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 .header {
   position: fixed;
   display: flex;
@@ -50,6 +68,8 @@ html {
   align-items: center;
   list-style: none;
   width: 100%;
+  white-space: nowrap;
+  /* overflow: hidden; */
 }
 
 .header .nav-center .logo-lol,
@@ -65,9 +85,9 @@ html {
   text-transform: uppercase;
   white-space: nowrap;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 1.5px;
-  padding: 8px 16px;
+  padding: 8px;
   border-radius: 6px;
   transition: 0.1s;
 }
@@ -98,8 +118,8 @@ html {
   cursor: pointer;
 }
 
-.header .nav-center li:hover.dropDown i {
-  color: #fff;
+.header .nav-center li:hover.dropDown  .subnav {
+  display: block;  
 }
 
 /* Game không đổi màu khi hover */
@@ -112,25 +132,108 @@ html {
   text-decoration: none;
 }
 
+.nav-center .subnav {
+  background-color: #292929;
+}
+
+.nav-center .subnav ul {
+  list-style: none;
+}
+
+.nav-center .dropDown {
+  position: relative;
+}
+
+.nav-center .dropDown .subnav {
+  display: none;
+  position: absolute;
+  width: 200px;
+  background-color: #292929;
+  top: 40px;
+  left: 0;
+  padding: 12px 0;
+  border-radius: 2px;
+  border-top: 5px solid #07c4e1;
+}
+
+.nav-center .dropDown .subnav li {
+  padding: 4px 16px;
+  cursor: default;
+}
+
+.nav-center .dropDown .subnav li a {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 6px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.nav-center .dropDown .subnav li a:hover {
+  background-color: #403e3a;
+  cursor: pointer;
+}
+
+.bridge {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+}
+
+
 .header .nav-right {
   display: inline-flex;
   padding-right: 32px;
   color: #fff;
 }
 
-.header .menu,
+
+
+.header .nav__burger,
 .header .nav-right .search-btn {
   display: flex;
   align-items: center;
   color: #fff;
 }
-.header .menu i,
+
+.header .nav__burger {
+  display: none;
+}
+
+.header .nav__burger i,
 .header .nav-right .search-btn i {
   padding: 10px;
   font-size: 26px;
   background-color: #2c2b29;
   border-radius: 16px;
   cursor: pointer;
+}
+
+.nav__burger,
+.nav__close {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.nav__burger,
+.nav__close {
+  display: none;
+}
+
+.nav__burger i,
+.nav__close i {
+  padding: 10px;
+  font-size: 26px;
+  background-color: #2c2b29;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.nav__close i {
+  font-size: 16px;
+  border-radius: 10px;
 }
 
 .header .nav-right .world-btn {
@@ -500,7 +603,7 @@ html {
 /* Content 3 */
 .content .background3 {
     background: url(/assets/img/background/background3.avif);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -567,7 +670,7 @@ html {
 .content .background4 {
     background: url(/assets/img/background/background4.avif);
     /* height: 816px; */
-    /* background-size: contain; */
+    background-size: cover;
     background-repeat: no-repeat;
     margin-top: -30px;
 }
@@ -629,23 +732,26 @@ html {
 }
 
 .content .multipleWaysToPlay .innerWrapper {
-    max-width: 60%; 
+    max-width: 100%; 
     aspect-ratio: 1 / 1;
     border-radius: 50%; 
     overflow: hidden;
     position: relative;
-    margin-left: 120px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 60px;
 }
 
 .content .multipleWaysToPlay .innerWrapper video {
     object-fit: cover;
-    
+    max-width: 100%;
 }
 
 .content .multipleWaysToPlay .info {
     text-align: center;
     padding-top: 60px;
     margin-right: 60px;
+    margin-bottom: 20px;
 }
 
 .content .multipleWaysToPlay .info .name {
@@ -675,6 +781,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 0px 0;
     list-style: none;
     color: #7e7e7e;
