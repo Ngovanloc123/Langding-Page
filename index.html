@@ -377,7 +377,6 @@
                   src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/22504be19528a73422e7f9fdf1c734a3e5b85ed5-1920x1080.jpg?auto=format&fit=fill&q=80&w=960"
                   alt="Arcane Fractured Jinx"
                 />
-                <div class="play-btn"><i class="ti-control-play"></i></div>
               </div>
               <!-- Thông tin -->
               <div class="info">
@@ -398,7 +397,6 @@
                   src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/22504be19528a73422e7f9fdf1c734a3e5b85ed5-1920x1080.jpg?auto=format&fit=fill&q=80&w=960"
                   alt="Arcane Fractured Jinx"
                 />
-                <div class="play-btn"><i class="ti-control-play"></i></div>
               </div>
               <!-- Thông tin -->
               <div class="info">
@@ -419,7 +417,6 @@
                   src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/22504be19528a73422e7f9fdf1c734a3e5b85ed5-1920x1080.jpg?auto=format&fit=fill&q=80&w=960"
                   alt="Arcane Fractured Jinx"
                 />
-                <div class="play-btn"><i class="ti-control-play"></i></div>
               </div>
               <!-- Thông tin -->
               <div class="info">
@@ -434,11 +431,8 @@
             </div>
           </div>
           <!-- Thanh điều hướng -->
-          <div class="navbar">
-            <div class="navbar-line"></div>
-            <i class="left ti-arrow-left"></i>
-            <i class="right ti-arrow-right"></i>
-          </div>
+          <button class="slider-btn left" onclick="scrollNews(-1)">&#10094;</button>
+          <button class="slider-btn right" onclick="scrollNews(1)">&#10095;</button>
         </div>
       </div>
 
@@ -525,7 +519,7 @@
           </div>
           <div class="img-champion">
             <img
-              src="./assets/img/img-champion/champion1.avif"
+              src="./assets/img/img-champion/Thresh.avif"
               alt="Hình ảnh tướng nào đó"
             />
             <div class="info">
@@ -572,38 +566,45 @@
                 <a href="">PLAY NOW</a>
               </div>
               <!-- Biểu tượng -->
-                <ul class="group">
-                  <li>
-                    <div class="summoner">
-                      <img src="./assets/img/icon/summoner.avif" alt=""/>
-                      <p>SUMMONER'S RIFT</p>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div class="aram">
-                      <img src="./assets/img/icon/aram.webp" alt=""/>
-                      <p>ARAM</p>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div class="teamfight">
-                      <img src="./assets/img/icon/teamfight.webp" alt=""/>
-                      <p>TEAMFIGHT TACTICS</p>
-                    </div>
-                  </li>
-                </ul>
+              <ul class="group">
+                <li>
+                  <div class="option" data-video="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/bbc27473157462adacf0de441a8796268eb2d0ac.mp4"
+                    data-title="THE MOST POPULAR GAME MODE"
+                    data-desc="Clear your lane, dive into epic 5v5 team fights, and destroy the enemy nexus before they destroy yours.">
+                    <img src="./assets/img/icon/summoner.avif" alt=""/>
+                    <p>SUMMONER'S RIFT</p>
+                  </div>
+                </li>
+              
+                <li>
+                  <div class="option" data-video="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/0a9b9f8dacb54086c58c1af8aa880d7cf6d7fea6.mp4"
+                    data-title="ALL RANDOM, ALL MID"
+                    data-desc="Battle across an icy bridge in this chaotically fun 5v5 game mode.">
+                    <img src="./assets/img/icon/aram.webp" alt=""/>
+                    <p>ARAM</p>
+                  </div>
+                </li>
+              
+                <li>
+                  <div class="option" data-video="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/e5791dbc0787a96e83b82df20d44375f09f4d861.mp4"
+                    data-title="A FREE-FOR-ALL WAR FOR SUPREMACY"
+                    data-desc="Assemble a squad of champions that battle on your behalf. Outlast all seven of your opponents and become the last person standing.">
+                    <img src="./assets/img/icon/teamfight.webp" alt=""/>
+                    <p>TEAMFIGHT TACTICS</p>
+                  </div>
+                </li>
+              </ul>
           </div>
+          <!-- Video hiển thị -->
           <div class="video-info">
             <div class="innerWrapper">
-              <video autoplay="" data-testid="icon-tab-media" class="sc-f3d622cf-0 eOxAvt sc-26e0dd2-0 eJReQo" loop="" playsinline="">
-                <source data-testid="source-video/mp4" src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/0a9b9f8dacb54086c58c1af8aa880d7cf6d7fea6.mp4" type="video/mp4">
+              <video id="main-video" autoplay loop playsinline>
+                <source id="video-source" src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/0a9b9f8dacb54086c58c1af8aa880d7cf6d7fea6.mp4" type="video/mp4">
               </video>
             </div>
             <div class="info">
-              <p class="name">ALL RANDOM, ALL MID</p>
-              <p class="describe">Battle across an icy bridge as your team of random champions charge toward the enemy Nexus in this chaotically fun 5v5 game mode.</p>
+              <p id="video-title" class="name">ALL RANDOM, ALL MID</p>
+              <p id="video-desc" class="describe">Battle across an icy bridge as your team of random champions charge toward the enemy Nexus in this chaotically fun 5v5 game mode.</p>
             </div>
           </div>
         </div>

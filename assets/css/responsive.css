@@ -46,9 +46,9 @@
         margin-right: 16px;
     }
 
-    .content .item-3 {
+    /* .content .item-3 {
         display: none;
-    }
+    } */
 
     .content .champion .container {
         width: 100%;
@@ -239,9 +239,9 @@
 
 /* Mobile */
 @media (max-width: 599px) {
-    .content .item-2 {
+    /* .content .item-2 {
         display: none;
-    }
+    } */
 
     .nav__menu.show {
         width: 100%;
